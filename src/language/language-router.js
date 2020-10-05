@@ -45,13 +45,13 @@ languageRouter
 
 languageRouter
   .get('/head', async (req, res, next) => {
-    // implement me
+    // TODO implement me
     res.send('implement me!')
   })
 
 languageRouter
   .post('/guess', async (req, res, next) => {
-    // implement me
+    // TODO implement me
     res.send('implement me!')
   })
 
