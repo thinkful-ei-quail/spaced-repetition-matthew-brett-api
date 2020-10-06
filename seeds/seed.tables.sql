@@ -18,8 +18,7 @@ VALUES
 INSERT INTO "language" ("id", "name", "user_id")
 VALUES
   (1, 'French', 1);
-
---// TODO Change words to new words.
+  
 INSERT INTO "word" ("id", "language_id", "original", "translation", "next")
 VALUES
   (1, 1, 'équilibre', 'balance', 2),

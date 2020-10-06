@@ -48,7 +48,7 @@ function makeLanguagesAndWords(user) {
     },
   ]
 
-  const words = [
+  const words = [ // TODO Change words to include needed fields.
     {
       id: 1,
       original: 'original 1',
