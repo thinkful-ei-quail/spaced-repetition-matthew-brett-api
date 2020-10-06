@@ -9,10 +9,10 @@ INSERT INTO "user" ("id", "username", "name", "password")
 VALUES
   (
     1,
-    'admin',
-    'Dunder Mifflin Admin',
-    -- password = "pass"
-    '$2a$10$fCWkaGbt7ZErxaxclioLteLUgg4Q3Rp09WW0s/wSLxDKYsaGYUpjG'
+    'TestAccount',
+    'Tesy Testofferson',
+    -- password = "Passw0rd!"
+    '$2a$12$zXRWcO4lQ0UTPtk/UPidZ.mWtl/I/DK1/jmrE8tjncwsjq3l0nQr6'
   );
 
 INSERT INTO "language" ("id", "name", "user_id")
