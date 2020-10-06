@@ -28,9 +28,9 @@ VALUES
   (5, 1, 'résoudre', 'solve', 6),
   (6, 1, 'programme', 'program', 7),
   (7, 1, 'qualité', 'quality', 8),
-  (7, 1, 'prioriser', 'prioritize', 9),
-  (7, 1, 'livrer', 'deliver', 10),
-  (8, 1, 'processus', 'process', null);
+  (8, 1, 'prioriser', 'prioritize', 9),
+  (9, 1, 'livrer', 'deliver', 10),
+  (10, 1, 'processus', 'process', null);
 
 UPDATE "language" SET head = 1 WHERE id = 1;
 
