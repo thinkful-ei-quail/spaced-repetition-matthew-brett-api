@@ -26,14 +26,17 @@ languageRouter.use(requireAuth).use(async (req, res, next) => {
 
 languageRouter.get("/", async (req, res, next) => {
   try {
-    const words = await LanguageService.getLanguageWords(
+    let words = await LanguageService.getLanguageWords(
       req.app.get("db"),
       req.language.id
     );
 
     res.json({
       language: req.language,
-      words,
+      words: words.map(word => {
+        word.original = word.original.replace('Ã©','é');
+        return word;
+      })
     });
     next();
   } catch (error) {
