@@ -1,7 +1,7 @@
 const express = require("express");
 const LanguageService = require("./language-service");
 const { requireAuth } = require("../middleware/jwt-auth");
-const List = require("../data/LinkedList")
+const List = require("../data/LinkedList");
 
 const languageRouter = express.Router();
 
@@ -43,11 +43,19 @@ languageRouter.get("/", async (req, res, next) => {
 
 languageRouter.get("/head", async (req, res, next) => {
   // TODO implement me
+
   res.send("implement me!");
 });
 
 languageRouter.post("/guess", async (req, res, next) => {
-  // TODO implement me
+  const { guess } = req.body;
+
+  for (const field of ["guess"])
+    if (!req.body[field])
+      return res.status(400).json({
+        error: `Missing '${field}' in request body`,
+      });
+
   res.send("implement me!");
 });
 
