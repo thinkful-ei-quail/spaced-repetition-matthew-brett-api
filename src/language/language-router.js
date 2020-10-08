@@ -6,7 +6,9 @@ const LinkedList = require("./linkedList");
 
 const languageRouter = express.Router();
 
-languageRouter.use(requireAuth).use(async (req, res, next) => {
+languageRouter
+.use(requireAuth)
+.use(async (req, res, next) => {
   try {
     const language = await LanguageService.getUsersLanguage(
       req.app.get("db"),
@@ -77,25 +79,24 @@ languageRouter
     try {
       const wordList = new LinkedList();
 
-      let [headNode] = await LanguageService.getNextWord(db, req.language.head);
-      wordList.insertFirst(headNode);
+      let headWord = await LanguageService.getNextWord(db, req.language.head);
+      wordList.insertFirst(headWord);
 
-      while (headNode.next !== null) {
-        const [nextNode] = await LanguageService.getNextWord(db, headNode.next);
+      while (headWord.next !== null) {
+        const nextNode = await LanguageService.getNextWord(db, headWord.next);
         wordList.insertLast(nextNode);
-        headNode = nextNode;
+        headWord = nextNode;
       }
 
       let isCorrect = false;
-      let totalScore = req.language.total_score;
 
-      if (guess.toLowerCase() === headWord.translation.toLowerCase()) {
+      if (guess.toLowerCase() === wordList.head.value.translation.toLowerCase()) {
         isCorrect = true;
-        ++wordList.head.value.correct_count;
+        wordList.head.value.correct_count += 1;
         wordList.head.value.memory_value *= 2;
-        ++req.language.total_score;
+        req.language.total_score += 1;
       } else {
-        ++wordList.head.value.incorrect_count;
+        wordList.head.value.incorrect_count += 1;
         wordList.head.value.memory_value = 1;
       }
 
@@ -129,12 +130,6 @@ languageRouter
         req.language.total_score
       );
 
-      // await LanguageService.updateWordList(
-      //   req.app.get("db"),
-      //   totalScore,
-      //   wordList,
-      //   req.language
-      // );
       const response = {
         nextWord: wordList.head.value.original,
         wordCorrectCount: wordList.head.value.correct_count,
