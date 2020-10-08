@@ -1,4 +1,9 @@
-const Node = require("./Node");
+class _Node {
+  constructor(value, next) {
+    this.value = value;
+    this.next = next;
+  }
+}
 
 class LinkedList {
   constructor() {
@@ -6,7 +11,7 @@ class LinkedList {
   }
 
   insertFirst(item) {
-    this.head = new Node(item, this.head);
+    this.head = new _Node(item, this.head);
   }
   insertLast(item) {
     if (this.head === null) {
@@ -16,13 +21,13 @@ class LinkedList {
       while (tempNode.next !== null) {
         tempNode = tempNode.next;
       }
-      tempNode.next = new Node(item, null);
+      tempNode.next = new _Node(item, null);
     }
   }
   insertAt(element, index) {
     if (index > 0 && index > this.size) return false;
     else {
-      var node = new Node(element);
+      var node = new _Node(element);
       var curr, prev;
       curr = this.head;
       if (index == 0) {
@@ -90,8 +95,8 @@ const words = [
     translation: "balance",
     next: 2,
     m: 1,
-    incorrect: 0,
-    correct: 0,
+    wordIncorrectCount: 0,
+    wordCorrectCount: 0,
   },
   {
     id: 2,
@@ -100,8 +105,8 @@ const words = [
     translation: "Automate",
     next: 3,
     m: 1,
-    incorrect: 0,
-    correct: 0,
+    wordIncorrectCount: 0,
+    wordCorrectCount: 0,
   },
   {
     id: 3,
@@ -110,8 +115,8 @@ const words = [
     translation: "extrapolate",
     next: 4,
     m: 1,
-    incorrect: 0,
-    correct: 0,
+    wordIncorrectCount: 0,
+    wordCorrectCount: 0,
   },
   {
     id: 4,
@@ -120,8 +125,8 @@ const words = [
     translation: "maintain",
     next: 5,
     m: 1,
-    incorrect: 0,
-    correct: 0,
+    wordIncorrectCount: 0,
+    wordCorrectCount: 0,
   },
   {
     id: 5,
@@ -130,8 +135,8 @@ const words = [
     translation: "solve",
     next: 6,
     m: 1,
-    incorrect: 0,
-    correct: 0,
+    wordIncorrectCount: 0,
+    wordCorrectCount: 0,
   },
   {
     id: 6,
@@ -140,8 +145,8 @@ const words = [
     translation: "program",
     next: 7,
     m: 1,
-    incorrect: 0,
-    correct: 0,
+    wordIncorrectCount: 0,
+    wordCorrectCount: 0,
   },
   {
     id: 7,
@@ -150,8 +155,8 @@ const words = [
     translation: "quality",
     next: 8,
     m: 1,
-    incorrect: 0,
-    correct: 0,
+    wordIncorrectCount: 0,
+    wordCorrectCount: 0,
   },
   {
     id: 7,
@@ -160,8 +165,8 @@ const words = [
     translation: "prioritize",
     next: 9,
     m: 1,
-    incorrect: 0,
-    correct: 0,
+    wordIncorrectCount: 0,
+    wordCorrectCount: 0,
   },
   {
     id: 7,
@@ -170,8 +175,8 @@ const words = [
     translation: "deliver",
     next: 10,
     m: 1,
-    incorrect: 0,
-    correct: 0,
+    wordIncorrectCount: 0,
+    wordCorrectCount: 0,
   },
   {
     id: 8,
@@ -180,95 +185,7 @@ const words = [
     translation: "process",
     next: 0,
     m: 1,
-    incorrect: 0,
-    correct: 0,
+    wordIncorrectCount: 0,
+    wordCorrectCount: 0,
   },
-
 ];
-
-function swap(arr, index1, index2) {
-  let temp = arr[index1];
-  arr[index1] = arr[index2];
-  arr[index2] = temp;
-}
-
-function SortByNext(arr) {
-  let beginningIndex = 0;
-  let currentIndex = 1;
-  while (currentIndex < arr.length) {
-    while (currentIndex > 0) {
-      currentVal = arr[currentIndex].next;
-      previousVal = arr[currentIndex - 1].next;
-      if (currentVal <= previousVal) {
-        swap(arr, currentIndex, currentIndex - 1);
-        currentIndex--;
-      } else {
-        break;
-      }
-    }
-    beginningIndex++;
-    currentIndex = beginningIndex + 1;
-  }
-
-  for (let i = 0; i < arr.length - 1; i++) {
-    arr[i].next = i + 1;
-  }
-  arr[arr.length - 1].next = null;
-
-  return arr;
-}
-
-function populateList(words) {
-  const list = new LinkedList();
-
-  SortByNext(words);
-
-  for (let i = 0; i < words.length; i++) {
-    list.insertLast(words[i]);
-  }
-  return list;
-}
-
-function main() {
-  let correct = true;
-
-  for (let n = 0; n < 5; n++) {
-    list = populateList(words);
-    console.log (list)
-
-    for (let i = 0; i < words.length; i++) {
-
-      if (!correct) {
-        words[i].m = 1;
-        words[i].incorrect += 1;
-        words[i].next = words[i].next + words[i].m;
-        correct = !correct;
-      } else {
-        words[i].m = words[i].m * 2;
-        words[i].correct += 1;
-        words[i].next += words[i].m;
-        correct = !correct;
-      }
-
-      words[i].next += words[i].m - 1;
-      list = populateList(words);
-    }
-
-
-    for (let i = 0; i < words.length; i++)
-      console.log(
-        "next",
-        words[i].next,
-        "m",
-        words[i].m,
-        "correct",
-        words[i].correct,
-        "incorrect",
-        words[i].incorrect,
-        " - ",
-        words[i].translation
-      );
-  }
-}
-
-main();
