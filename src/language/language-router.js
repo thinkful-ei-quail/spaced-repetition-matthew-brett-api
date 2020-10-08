@@ -36,7 +36,10 @@ languageRouter.get("/", async (req, res, next) => {
 
     res.json({
       language: req.language,
-      words,
+      words: words.map(word => {
+        word.original = word.original.replace('Ã©','é');
+        return word;
+      })
     });
     next();
   } catch (error) {
@@ -51,7 +54,7 @@ languageRouter.use(requireAuth).get("/head", async (req, res, next) => {
       req.language.head
     );
     res.json({
-      nextWord: headWord.original,
+      nextWord: headWord.original.replace('Ã©','é'),
       totalScore: req.language.total_score,
       wordCorrectCount: headWord.correct_count,
       wordIncorrectCount: headWord.incorrect_count,
@@ -65,6 +68,7 @@ languageRouter.use(requireAuth).get("/head", async (req, res, next) => {
 languageRouter
   .use(requireAuth)
   .post("/guess", bodyParser, async (req, res, next) => {
+    console.log(res.body);
     const db = req.app.get("db");
     const { guess } = req.body;
     let currentHead = req.language.head;
