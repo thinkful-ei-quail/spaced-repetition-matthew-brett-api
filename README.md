@@ -6,6 +6,10 @@ Client repo: https://github.com/thinkful-ei-quail/spaced-repetition-matthew-bret
 
 Live api: https://frozen-atoll-74912.herokuapp.com/
 
+Test Account credentials:
+Username: TestAccount
+Passowrd: Passw0rd!
+
 ## Local dev setup
 
 If using user `dunder-mifflin`:
