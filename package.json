@@ -1,5 +1,5 @@
 {
-  "name": "express-boilerplate",
+  "name": "Wordistry API",
   "version": "0.0.1",
   "description": "",
   "main": "src/server.js",
