@@ -1,10 +1,10 @@
 {
-  "name": "Wordistry API",
+  "name": "wordistry-api",
   "version": "0.0.1",
   "description": "",
   "main": "src/server.js",
   "engines": {
-    "node": "12.18.3"
+    "node": "^12.18.3"
   },
   "scripts": {
     "test": "mocha --require test/setup.js",
