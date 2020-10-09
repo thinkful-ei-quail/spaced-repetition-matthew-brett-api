@@ -54,7 +54,7 @@ languageRouter.use(requireAuth).get("/head", async (req, res, next) => {
       req.language.head
     );
     res.json({
-      nextWord: headWord.original.replace('Ã©','é'),
+      nextWord: headWord.original,
       totalScore: req.language.total_score,
       wordCorrectCount: headWord.correct_count,
       wordIncorrectCount: headWord.incorrect_count,

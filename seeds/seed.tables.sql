@@ -21,13 +21,13 @@ VALUES
   
 INSERT INTO "word" ("id", "language_id", "original", "translation", "next", "memory_value", "correct_count", "incorrect_count" )
 VALUES
-  (1, 1, 'équilibre', 'balance', 2, 1, 0 ,0),
+  (1, 1, 'equilibre', 'balance', 2, 1, 0 ,0),
   (2, 1, 'automatique', 'automate', 3, 1, 0 ,0),
-  (3, 1, 'extrapolé', 'extrapolate', 4, 1, 0 ,0),
+  (3, 1, 'extrapole', 'extrapolate', 4, 1, 0 ,0),
   (4, 1, 'maintenir', 'maintain', 5, 1, 0 ,0),
-  (5, 1, 'résoudre', 'solve', 6, 1, 0 ,0),
+  (5, 1, 'resoudre', 'solve', 6, 1, 0 ,0),
   (6, 1, 'programme', 'program', 7, 1, 0 ,0),
-  (7, 1, 'qualité', 'quality', 8, 1, 0 ,0),
+  (7, 1, 'qualite', 'quality', 8, 1, 0 ,0),
   (8, 1, 'prioriser', 'prioritize', 9, 1, 0 ,0),
   (9, 1, 'livrer', 'deliver', 10, 1, 0, 0),
   (10, 1, 'processus', 'process', null, 1, 0, 0);
