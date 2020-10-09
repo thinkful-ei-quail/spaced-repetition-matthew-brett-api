@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "description": "",
   "main": "src/server.js",
+  "engines": {
+    "node": "12.18.3"
+  },
   "scripts": {
     "test": "mocha --require test/setup.js",
     "dev": "nodemon src/server.js",
@@ -12,7 +15,7 @@
     "deploy": "git push heroku master"
   },
   "keywords": [],
-  "author": "Tom `tomatao` HT <tomht@thinkful.com>",
+  "author": "Brett Westerlund/Matthew Macomber",
   "license": "MIT",
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -20,9 +23,11 @@
     "dotenv": "^6.2.0",
     "express": "^4.16.4",
     "helmet": "^4.1.1",
+    "heroku": "^7.45.0",
     "jsonwebtoken": "^8.5.0",
     "knex": "^0.21.6",
     "morgan": "^1.9.1",
+    "node-forge": "^0.10.0",
     "pg": "^7.8.2"
   },
   "devDependencies": {
