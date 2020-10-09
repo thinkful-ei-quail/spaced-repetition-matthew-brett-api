@@ -133,7 +133,7 @@ languageRouter
       );
 
       const response = {
-        nextWord: wordList.head.value.original,
+        nextWord: wordList.head.value.original.replace('Ã©','é'),
         wordCorrectCount: wordList.head.value.correct_count,
         wordIncorrectCount: wordList.head.value.incorrect_count,
         totalScore: req.language.total_score,
