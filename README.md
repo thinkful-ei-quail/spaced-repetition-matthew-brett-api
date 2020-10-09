@@ -1,5 +1,9 @@
 # Spaced repetition API!
 
+Client repo: https://github.com/thinkful-ei-quail/spaced-repetition-matthew-brett-client
+
+Live api: https://frozen-atoll-74912.herokuapp.com/
+
 ## Local dev setup
 
 If using user `dunder-mifflin`:
