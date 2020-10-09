@@ -22,7 +22,7 @@ VALUES
 INSERT INTO "word" ("id", "language_id", "original", "translation", "next", "memory_value", "correct_count", "incorrect_count" )
 VALUES
   (1, 1, 'équilibre', 'balance', 2, 1, 0 ,0),
-  (2, 1, 'automatique', 'Automate', 3, 1, 0 ,0),
+  (2, 1, 'automatique', 'automate', 3, 1, 0 ,0),
   (3, 1, 'extrapolé', 'extrapolate', 4, 1, 0 ,0),
   (4, 1, 'maintenir', 'maintain', 5, 1, 0 ,0),
   (5, 1, 'résoudre', 'solve', 6, 1, 0 ,0),
