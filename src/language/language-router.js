@@ -67,8 +67,6 @@ languageRouter
   .post("/guess", bodyParser, async (req, res, next) => {
     const db = req.app.get("db");
     const { guess } = req.body;
-    let currentHead = req.language.head;
-    let previousWord = currentHead;
 
     if (!guess) {
       return res.status(400).json({

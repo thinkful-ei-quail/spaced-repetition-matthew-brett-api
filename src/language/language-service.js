@@ -49,9 +49,6 @@ const LanguageService = {
   },
 
   updateWords(db, currNode, nextNode) {
-    console.log("updateWords ->  nextNode", nextNode);
-    console.log("updateWords -> currNode", currNode);
-
     return db("word")
       .where({ id: currNode.id, language_id: currNode.language_id })
       .update({
