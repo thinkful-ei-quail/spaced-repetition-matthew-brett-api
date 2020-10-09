@@ -1,5 +1,7 @@
 # Spaced repetition API!
 
+App Name: Wordistry
+
 Client repo: https://github.com/thinkful-ei-quail/spaced-repetition-matthew-brett-client
 
 Live api: https://frozen-atoll-74912.herokuapp.com/
