@@ -4,7 +4,7 @@
   "description": "",
   "main": "src/server.js",
   "engines": {
-    "node": "12.18.3"
+    "node": "^12.18.3"
   },
   "scripts": {
     "test": "mocha --require test/setup.js",
