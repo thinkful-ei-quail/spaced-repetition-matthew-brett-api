@@ -11,7 +11,7 @@ VALUES
     1,
     'TestAccount',
     'Tesy Testofferson',
-    -- password = "Passw0rd!"
+    --- password = "Passw0rd!"
     '$2a$12$zXRWcO4lQ0UTPtk/UPidZ.mWtl/I/DK1/jmrE8tjncwsjq3l0nQr6'
   );
 
