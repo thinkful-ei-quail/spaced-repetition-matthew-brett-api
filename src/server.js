@@ -1,5 +1,4 @@
 require("dotenv").config();
-const LinkedList = require("./language/LinkedList");
 
 const knex = require("knex");
 const app = require("./app");
