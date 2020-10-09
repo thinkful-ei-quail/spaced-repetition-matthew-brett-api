@@ -1,5 +1,5 @@
 {
-  "name": "Wordistry API",
+  "name": "wordistry-api",
   "version": "0.0.1",
   "description": "",
   "main": "src/server.js",
